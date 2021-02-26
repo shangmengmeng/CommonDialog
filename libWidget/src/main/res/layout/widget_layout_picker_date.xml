@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/widget_tv_picker_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:paddingRight="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="取消"
+            android:textColor="#777777"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/widget_tv_picker_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:paddingRight="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="确定"
+            android:textColor="#1492FF"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/widget_tb_dialog"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        app:tabTextColor="#333333"
+        app:tabSelectedTextColor="#333333"
+        app:tabIndicatorColor="#1492FF"
+        app:tabIndicatorHeight="2dp"
+        app:tabIndicatorFullWidth="false"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#f0f0f0" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:paddingStart="16dp"
+        android:paddingRight="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="240dp">
+
+            <com.star.libwidget.star_dialog.date.WheelView
+                android:id="@+id/widget_rv_y"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+            <com.star.libwidget.star_dialog.date.WheelView
+                android:id="@+id/widget_rv_mon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+            <com.star.libwidget.star_dialog.date.WheelView
+                android:id="@+id/widget_rv_d"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+            <com.star.libwidget.star_dialog.date.WheelView
+                android:id="@+id/widget_rv_h"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+            <com.star.libwidget.star_dialog.date.WheelView
+                android:id="@+id/widget_rv_m"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+            <com.star.libwidget.star_dialog.date.WheelView
+                android:id="@+id/widget_rv_s"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:background="@drawable/widget_shape_wheel_top" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="96dp"
+            android:background="#E6E7EB" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="144dp"
+            android:background="#E6E7EB" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/widget_shape_wheel_bottom" />
+    </FrameLayout>
+</LinearLayout>

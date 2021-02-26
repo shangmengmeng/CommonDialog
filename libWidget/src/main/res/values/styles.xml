@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--popWindow动画-->
+    <style name="StarPopupMenuAnimation">
+        <item name="android:windowEnterAnimation">@anim/popup_menu_enter</item>
+        <item name="android:windowExitAnimation">@anim/popup_menu_exit</item>
+    </style>
+    <!--StarDialog的样式-->
+    <style name="AppTheme.Dialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="windowActionBar">false</item>
+        <!-- 没有标题栏 -->
+        <item name="windowNoTitle">true</item>
+        <!--边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--除去title-->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 对话框是否有遮盖 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 对话框出现时背景是否变暗 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 着色缓存（一般不用）-->
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <!--对话框背景(重要)-->
+        <item name="android:windowBackground">@null</item>
+        <!-- 动画 -->
+        <!-- <item name="android:windowAnimationStyle">@style/Animation.AppCompat.Dialog</item>-->
+        <item name="android:windowEnterAnimation">@anim/widget_anim_push_in</item>
+        <item name="android:windowExitAnimation">@anim/widget_anim_push_out</item>
+        <!-- 输入法弹出时自适应 -->
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+    <!--StarDialog的样式-->
+    <style name="StarDialog" parent="AppTheme.Dialog">
+
+    </style>
+
+    <style name="StarDialogStyle1" parent="AppTheme.Dialog">
+        <item name="android:windowAnimationStyle">@style/Animation.AppCompat.Dialog</item>
+    </style>
+
+    <style name="StarDialogStyle2" parent="AppTheme.Dialog">
+        <item name="android:windowEnterAnimation">@anim/widget_anim_scale_ios_in</item>
+        <item name="android:windowExitAnimation">@anim/widget_anim_sale_ios_out</item>
+    </style>
+
+    <style name="StarDialogStyle3" parent="AppTheme.Dialog">
+        <item name="android:windowEnterAnimation">@anim/widget_anim_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/widget_anim_bottom_out</item>
+    </style>
+</resources>
