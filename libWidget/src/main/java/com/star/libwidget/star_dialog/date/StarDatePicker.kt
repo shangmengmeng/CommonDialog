@@ -549,7 +549,7 @@ class StarDatePicker : DialogFragment(), IStarDatePicker {
                     } catch (e: Exception) {
                         Date()
                     }
-                    mStarDatePickerListener?.confirm(dateStr, date)
+                    mStarDatePickerListener?.confirm(dateStr, date!!)
                 }
 
                 //年月日时分秒
@@ -587,7 +587,7 @@ class StarDatePicker : DialogFragment(), IStarDatePicker {
                     } catch (e: Exception) {
                         Date()
                     }
-                    mStarDatePickerListener?.confirm(dateStr, date)
+                    mStarDatePickerListener?.confirm(dateStr, date!!)
                 }
                 //年月日
                 StarDateType.YMD -> {
@@ -605,7 +605,7 @@ class StarDatePicker : DialogFragment(), IStarDatePicker {
                     } catch (e: Exception) {
                         Date()
                     }
-                    mStarDatePickerListener?.confirm("$yearStr-$monthStr-$dayStr", date)
+                    mStarDatePickerListener?.confirm("$yearStr-$monthStr-$dayStr", date!!)
                 }
                 //年月
                 StarDateType.YM -> {
@@ -621,7 +621,7 @@ class StarDatePicker : DialogFragment(), IStarDatePicker {
                     } catch (e: Exception) {
                         Date()
                     }
-                    mStarDatePickerListener?.confirm(dateStr, date)
+                    mStarDatePickerListener?.confirm(dateStr, date!!)
                 }
                 //时分秒
                 StarDateType.HMS -> {
@@ -642,7 +642,7 @@ class StarDatePicker : DialogFragment(), IStarDatePicker {
                     } catch (e: Exception) {
                         Date()
                     }
-                    mStarDatePickerListener?.confirm(dateStr, date)
+                    mStarDatePickerListener?.confirm(dateStr, date!!)
                 }
                 //时分
                 StarDateType.HM -> {
@@ -661,7 +661,7 @@ class StarDatePicker : DialogFragment(), IStarDatePicker {
                     } catch (e: Exception) {
                         Date()
                     }
-                    mStarDatePickerListener?.confirm(dateStr, date)
+                    mStarDatePickerListener?.confirm(dateStr, date!!)
                 }
                 else -> {
                     dismiss()
