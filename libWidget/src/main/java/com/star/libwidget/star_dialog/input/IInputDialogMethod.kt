@@ -11,37 +11,37 @@ interface IInputStarDialogMethod {
     /**
      * 设置标题
      */
-    fun setTitle(title: String): StarInputDialog.Builder
+    fun setTitle(title: String): StarInputDialog
 
     /**
      * 确认文字
      */
-    fun setConfirmText(confirmText: String): StarInputDialog.Builder
+    fun setConfirmText(confirmText: String): StarInputDialog
 
     /**
      * 取消文字
      */
-    fun setCancelText(cancelText: String): StarInputDialog.Builder
+    fun setCancelText(cancelText: String): StarInputDialog
 
     /**
      * 是否为单按钮
      */
-    fun singleButton(isSingleButton: Boolean): StarInputDialog.Builder
+    fun singleButton(isSingleButton: Boolean): StarInputDialog
 
     /**
      * 设置动画Style
      */
-    fun setAnimStyle(@StyleRes styleId: Int): StarInputDialog.Builder
+    fun setAnimStyle(@StyleRes styleId: Int): StarInputDialog
 
     /**
      * 监听
      */
-    fun setOnStarInputDialogClickListener(dialogClickListener: StarInputDialogClickListener): StarInputDialog.Builder
+    fun setOnStarInputDialogClickListener(dialogClickListener: StarInputDialogClickListener): StarInputDialog
 
     /**
      * 附加设置
      */
-    fun setOptionSetting(option: InputDialogSettingOption): StarInputDialog.Builder
+    fun setOptionSetting(option: InputDialogSettingOption): StarInputDialog
 }
 
 interface StarInputDialogClickListener {

@@ -1,7 +1,6 @@
 package com.star.libwidget.star_dialog.common
 
 import android.app.Dialog
-import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -9,7 +8,7 @@ import android.text.TextUtils
 import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentActivity
 import com.star.libwidget.R
 
 /**
@@ -18,7 +17,7 @@ import com.star.libwidget.R
  *  @date: 2021/2/1
  */
 
-class StarDialog() : DialogFragment() {
+class StarDialog(private var fragmentActivity: FragmentActivity) : DialogFragment(), IStarDialogMethod {
     private var mTitle: String? = null
     private lateinit var mContent: String
     private var mConfirmText: String? = null
@@ -27,26 +26,6 @@ class StarDialog() : DialogFragment() {
     private var mIsSingleButton: Boolean? = null
     private var mDialogClickListener: StarDialogClickListener? = null
     private var mSettingOption: DialogSettingOption? = null
-
-    constructor(
-        title: String?,
-        content: String,
-        confirmText: String?,
-        cancelText: String?,
-        animStyleId: Int?,
-        isSingleButton: Boolean?,
-        dialogClickListener: StarDialogClickListener?,
-        settingOption: DialogSettingOption?
-    ) : this() {
-        this.mTitle = title
-        this.mContent = content
-        this.mConfirmText = confirmText
-        this.mCancelText = cancelText
-        this.mAnimStyleId = animStyleId
-        this.mIsSingleButton = isSingleButton
-        this.mDialogClickListener = dialogClickListener
-        this.mSettingOption = settingOption
-    }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = Dialog(context!!)
@@ -129,70 +108,48 @@ class StarDialog() : DialogFragment() {
         }
     }
 
-    class Builder : IStarDialogMethod {
-        private var title: String? = null
-        private lateinit var content: String
-        private var confirmText: String? = null
-        private var cancelText: String? = null
-        private var animStyleId: Int? = null
-        private var isSingleButton: Boolean? = null
-        private var dialogClickListener: StarDialogClickListener? = null
-        private var settingOption: DialogSettingOption? = null
-
-
-        override fun setTitle(title: String): Builder {
-            this.title = title
-            return this
-        }
-
-        override fun setContent(content: String): Builder {
-            this.content = content
-            return this
-        }
-
-        override fun setConfirmText(confirmText: String): Builder {
-            this.confirmText = confirmText
-            return this
-        }
-
-        override fun setCancelText(cancelText: String): Builder {
-            this.cancelText = cancelText
-            return this
-        }
-
-        override fun single(isSingleButton: Boolean): Builder {
-            this.isSingleButton = isSingleButton
-            return this
-        }
-
-        override fun setAnimStyle(styleId: Int): Builder {
-            this.animStyleId = styleId
-            return this
-        }
-
-        override fun setOnStarDialogClickListener(dialogClickListener: StarDialogClickListener): Builder {
-            this.dialogClickListener = dialogClickListener
-            return this
-        }
-
-        override fun setOptionSetting(option: DialogSettingOption): Builder {
-            this.settingOption = option
-            return this
-        }
-
-        override fun show(manager: FragmentManager) {
-            val starDialog =
-                StarDialog(
-                    title,
-                    content,
-                    confirmText,
-                    cancelText,
-                    animStyleId,
-                    isSingleButton,
-                    dialogClickListener,
-                    settingOption
-                )
-            starDialog.show(manager, "")
-        }
+    override fun setTitle(title: String): StarDialog {
+        this.mTitle = title
+        return this
     }
+
+    override fun setContent(content: String): StarDialog {
+        this.mContent = content
+        return this
+    }
+
+    override fun setConfirmText(confirmText: String): StarDialog {
+        this.mConfirmText = confirmText
+        return this
+    }
+
+    override fun setCancelText(cancelText: String): StarDialog {
+        this.mCancelText = cancelText
+        return this
+    }
+
+    override fun single(isSingleButton: Boolean): StarDialog {
+        this.mIsSingleButton = isSingleButton
+        return this
+    }
+
+    override fun setAnimStyle(styleId: Int): StarDialog {
+        this.mAnimStyleId = styleId
+        return this
+    }
+
+    override fun setOnStarDialogClickListener(dialogClickListener: StarDialogClickListener): StarDialog {
+        this.mDialogClickListener = dialogClickListener
+        return this
+    }
+
+    override fun setOptionSetting(option: DialogSettingOption): StarDialog {
+        this.mSettingOption = option
+        return this
+    }
+
+    override fun show() {
+        this.show(fragmentActivity.supportFragmentManager, "")
+    }
+
 }

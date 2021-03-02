@@ -229,6 +229,8 @@ class StarDatePicker : DialogFragment(), IStarDatePicker {
                 return false
             }
         }
+        mYearList.add("")
+        mYearList.add("")
         val yearSnapHelper = LinearSnapHelper()
         val yearAdapter =
             StarDatePickerAdapter(context!!, mYearList, mContainUnit, StarUnitType.YEAR, 0, null)
