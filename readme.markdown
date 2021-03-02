@@ -73,7 +73,7 @@ dependencies {
 
  **StarDialog的自定义使用方法**
 
-| 方法                                  | 是否必须 | 描述     |
+| StarDialog的方法                                  | 是否必须 | 描述     |
 |-------------------------------------|------|--------|
 | setTitle(title: String)             | 否    | 设置标题   |
 | setContent(content: String)         | 是    | 设置内容   |
@@ -84,7 +84,9 @@ dependencies {
 | setOnStarDialogClickListener(dialogClickListener: StarDialogClickListener)     | 否    | 设置监听 |
 | setOptionSetting(option: DialogSettingOption)     | 否    | 设置其它配置项 |
 
-| 方法                          | 是否必须 | 描述     |
+Option的方法：
+
+| Option的方法                          | 是否必须 | 描述     |
 |-----------------------------|------|--------|
 | setTitleColor(color: Int)   | 否    | 设置标题颜色 |
 | setTitleSize(size: Float)   | 否    | 标题大小   |
