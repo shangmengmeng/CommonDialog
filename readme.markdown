@@ -24,26 +24,59 @@ dependencies {
 
 
 ```
+//普通
             R.id.btn_dialog_normal -> {
-                StarDialog.Builder()
-                    .setContent("请注意这张是假币")
-                    .setOnStarDialogClickListener(object : StarDialogClickListener {
-                        override fun onConfirm() =
-                            Toast.makeText(applicationContext, "我确定了", Toast.LENGTH_SHORT).show()
+                StarDialog(this)
+                        .setContent("请注意这张是假币")
+                        .setOnStarDialogClickListener(object : StarDialogClickListener {
+                            override fun onConfirm() =
+                                    Toast.makeText(applicationContext, "我确定了", Toast.LENGTH_SHORT).show()
 
-                        override fun onCancel() {
-                            Toast.makeText(applicationContext, "我取消了", Toast.LENGTH_SHORT).show()
-                        }
-                    })
-                    .show(supportFragmentManager)
+                            override fun onCancel() {
+                                Toast.makeText(applicationContext, "我取消了", Toast.LENGTH_SHORT).show()
+                            }
+                        })
+                        .show()
+            }
+            //带标题
+            R.id.btn_dialog_title -> {
+                StarDialog(this)
+                        .setTitle("我带标题")
+                        .setContent("请注意这张是假币")
+                        .setOnStarDialogClickListener(object : StarDialogClickListener {
+                            override fun onConfirm() =
+                                    Toast.makeText(applicationContext, "我确定了", Toast.LENGTH_SHORT).show()
+
+                            override fun onCancel() {
+                                Toast.makeText(applicationContext, "我取消了", Toast.LENGTH_SHORT).show()
+                            }
+                        })
+                        .show()
+            }
+            //单按钮
+            R.id.btn_dialog_single -> {
+                StarDialog(this)
+                        .single(true)
+                        .setTitle("我带标题")
+                        .setContent("请注意这张是假币")
+                        .setOnStarDialogClickListener(object : StarDialogClickListener {
+                            override fun onConfirm() =
+                                    Toast.makeText(applicationContext, "我确定了", Toast.LENGTH_SHORT).show()
+
+                            override fun onCancel() {
+                                Toast.makeText(applicationContext, "我取消了", Toast.LENGTH_SHORT).show()
+                            }
+                        })
+                        .show()
             }
 ```
 
-StarDialog的自定义使用方法
+ **StarDialog的自定义使用方法**
+
 
 
 ```
-  //自定义
+ //自定义
             R.id.btn_dialog_custom -> {
                 val option = DialogSettingOption()
                 option.titleColor = Color.parseColor("#333333")
@@ -66,3 +99,4 @@ StarDialog的自定义使用方法
                     .show(supportFragmentManager)
             }
 ```
+
