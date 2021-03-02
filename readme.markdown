@@ -1,6 +1,6 @@
  **
 
-### 欢迎使用StarDialog
+### 欢迎使用StarDialog(仅支持androidx)
 
 添加依赖：
 
