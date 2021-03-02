@@ -14,7 +14,7 @@ allprojects {
 	}
 //依赖
 dependencies {
-	        implementation 'com.github.shangmengmeng:CommonDialog:1.0.2'
+	        implementation 'com.github.shangmengmeng:CommonDialog:1.0.3'
 	}
 ```
 
