@@ -4,6 +4,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import com.star.libwidget.star_dialog.bottomPicker.BottomPicker
 import com.star.libwidget.star_dialog.common.DialogSettingOption
@@ -15,6 +16,7 @@ import com.star.libwidget.star_dialog.date.StarDateType
 import com.star.libwidget.star_dialog.input.InputDialogSettingOption
 import com.star.libwidget.star_dialog.input.StarInputDialog
 import com.star.libwidget.star_dialog.input.StarInputDialogClickListener
+import com.star.libwidget.star_dialog.other.StarImgDialog
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -42,7 +44,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btn_dialog_time_hm.setOnClickListener(this)
         btn_dialog_dateTime_tab.setOnClickListener(this)
         btn_dialog_bottomPicker.setOnClickListener(this)
-
+        btn_dialog_imgDialog.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -264,6 +266,26 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 mDialog.setData(ArrayList<String>())
             }
 
+            R.id.btn_dialog_imgDialog ->{
+                StarImgDialog(this)
+                    .setImage(object:StarImgDialog.CreateImageEngine{
+                        override fun covert(imageView: ImageView) {
+                            imageView.setImageResource(R.mipmap.icon_demo)
+                        }
+                    })
+                    .setOnClickListener(object:StarImgDialog.ImgDialogListener{
+                        override fun onImgClick() {
+
+                        }
+
+                        override fun onCancel() {
+
+                        }
+
+                    })
+                    .show(supportFragmentManager, "")
+
+            }
 
         }
     }

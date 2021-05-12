@@ -164,6 +164,16 @@
                 android:text="底部弹框"
                 android:textColor="@color/white"
                 android:textSize="16dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_dialog_imgDialog"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="#00b7ee"
+                android:text="首页广告弹框"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
